@@ -12,15 +12,15 @@ const Login = () => {
     const nav = useNavigate()
 
 
-    const handleLogin=()=>{
+    const handleLogin = () => {
         const storedUsers = JSON.parse(localStorage.getItem("users")) || [];
 
         const user = storedUsers.find(user => user.userName === userName && user.password === password);
 
-        if(user){
+        if (user) {
             console.log("first")
         }
-        else{
+        else {
             toast.error("Invalid username or password", {
                 position: "top-center",
                 autoClose: 3000,
@@ -94,7 +94,9 @@ const Login = () => {
                     <Button variant='contained' onClick={() => { handleLogin() }}>LOG IN </Button>
 
 
-                    <Button >
+                    <Button onClick={() => {
+                        nav("/forget-password")
+                    }}>
                         FORGOT PASSWORD?
                     </Button>
 

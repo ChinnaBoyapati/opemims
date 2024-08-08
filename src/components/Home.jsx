@@ -1,8 +1,13 @@
 import React from 'react'
+import Navbar from './uicomponents/Navbar'
+import { Outlet } from 'react-router-dom'
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <div>
+      <Navbar />
+      <Outlet />
+    </div>
   )
 }
 
