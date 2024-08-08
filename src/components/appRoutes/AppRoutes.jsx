@@ -7,6 +7,13 @@ import Regester from "../uicomponents/Regester";
 import Home from './../Home';
 import ClaimsControlPage from './../claims/ClaimsControlPage';
 import ChangePassword from "../uicomponents/ChangePassword";
+import ClaimReview from "../claims/ClaimReview";
+import BatchRunControlPage from "../claims/BatchRunControlPage";
+import ProductControl from "../administration/ProductControl";
+import HealthFacilities from "../administration/HealthFacilities";
+import { MedicalServices } from "@mui/icons-material";
+import MedicalItems from './../administration/MedicalItems';
+import MedicalServicesPrice from "../administration/MedicalServicesPrice";
 
 export let router = createBrowserRouter([
   {
@@ -34,6 +41,34 @@ export let router = createBrowserRouter([
       {
         path: "/home/change-password",
         element: <ChangePassword />
+      },
+      {
+        path: "/home/claim-review",
+        element: <ClaimReview />
+      },
+      {
+        path: "/home/batch-run-control",
+        element: <BatchRunControlPage />
+      },
+      {
+        path: "/home/products",
+        element: <ProductControl />
+      },
+      {
+        path: "/home/health-facilities",
+        element: <HealthFacilities />
+      },
+      {
+        path: "/home/medical-services",
+        element: <MedicalServices />
+      },
+      {
+        path: "/home/medical-items",
+        element: <MedicalItems />
+      },
+      {
+        path: "/home/medical-services-price",
+        element: <MedicalServicesPrice />
       }
     ]
   }
