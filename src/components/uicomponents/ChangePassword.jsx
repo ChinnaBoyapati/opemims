@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 const ChangePassword = () => {
-
+  let navigate = useNavigate()
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
 
@@ -31,7 +31,7 @@ const ChangePassword = () => {
         progress: undefined,
       });
     }
-
+    navigate("/")
   }
   return (
 

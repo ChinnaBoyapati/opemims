@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 const Login = () => {
-
+    let navigate = useNavigate()
     const [userName, setUserName] = useState("");
     const [password, setPassword] = useState("");
 
@@ -32,6 +32,9 @@ const Login = () => {
             });
         }
 
+
+
+        navigate("/home")
     }
     return (
 

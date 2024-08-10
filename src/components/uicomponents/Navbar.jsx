@@ -1,7 +1,7 @@
 
 import { Box, Typography, Menu, MenuItem, TextField, IconButton, Avatar } from '@mui/material'
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
 const Navbar = () => {
@@ -10,7 +10,7 @@ const Navbar = () => {
   const [anchorElInsurance, setAnchorInsurance] = useState(null);
   const [anchorElAdministration, setAnchorElAdministration] = useState(null);
   const [anchorProfile, setAnchorProfile] = useState(null)
-
+  let navigate = useNavigate()
   const handleMenuOpen = (setAnchorEl) => (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -104,14 +104,53 @@ const Navbar = () => {
               open={Boolean(anchorElInsurance)}
               onClose={handleMenuClose(setAnchorInsurance)}
             >
-              <MenuItem onClick={handleMenuClose(setAnchorInsurance)}>
-                Health Facility Claims
+              <MenuItem onClick={() => {
+                handleMenuClose(setAnchorInsurance)
+                navigate("/home/add-family")
+              }}>
+                Add Family/Groups
               </MenuItem>
-              <MenuItem onClick={handleMenuClose(setAnchorInsurance)}>
-                Reviews
+              <MenuItem onClick={() => {
+                handleMenuClose(setAnchorInsurance)
+                navigate("/home/view-family")
+              }}>
+                Families/Groups
               </MenuItem>
-              <MenuItem onClick={handleMenuClose(setAnchorInsurance)}>
-                Batch Runs
+              <MenuItem onClick={() => {
+                handleMenuClose(setAnchorInsurance)
+                navigate("/home/insurees")
+              }}>
+                Insurees
+              </MenuItem>
+              <MenuItem onClick={() => {
+                handleMenuClose(setAnchorInsurance)
+                navigate("/home/policies")
+              }}>
+                Policies
+              </MenuItem>
+              <MenuItem onClick={() => {
+                handleMenuClose(setAnchorInsurance)
+                navigate("/home/contributions")
+              }}>
+                Contributions
+              </MenuItem>
+              <MenuItem onClick={() => {
+                handleMenuClose(setAnchorInsurance)
+                navigate("/home/payments")
+              }}>
+                Payments
+              </MenuItem>
+              <MenuItem onClick={() => {
+                handleMenuClose(setAnchorInsurance)
+                navigate("/home/policyHolders")
+              }}>
+                Policy Holders
+              </MenuItem>
+              <MenuItem onClick={() => {
+                handleMenuClose(setAnchorInsurance)
+                navigate("/home/contacts")
+              }}>
+                Contracts
               </MenuItem>
             </Menu>
           </Box>
@@ -132,13 +171,25 @@ const Navbar = () => {
               open={Boolean(anchorElClaims)}
               onClose={handleMenuClose(setAnchorElClaims)}
             >
-              <MenuItem onClick={handleMenuClose(setAnchorElClaims)}>
+              <MenuItem onClick={() => {
+                handleMenuClose(setAnchorElClaims)
+                navigate("/home")
+              }
+              }>
                 Health Facility Claims
               </MenuItem>
-              <MenuItem onClick={handleMenuClose(setAnchorElClaims)}>
+              <MenuItem onClick={() => {
+                handleMenuClose(setAnchorElClaims)
+                navigate("/home/claim-review")
+              }}>
                 Reviews
               </MenuItem>
-              <MenuItem onClick={handleMenuClose(setAnchorElClaims)}>
+              <MenuItem onClick={() => {
+                handleMenuClose(setAnchorElClaims)
+                navigate("/home/batch-run-control")
+              }
+
+              }>
                 Batch Runs
               </MenuItem>
             </Menu>
@@ -161,14 +212,77 @@ const Navbar = () => {
               open={Boolean(anchorElAdministration)}
               onClose={handleMenuClose(setAnchorElAdministration)}
             >
-              <MenuItem onClick={handleMenuClose(setAnchorElAdministration)}>
-                Administration
+              <MenuItem onClick={() => {
+                handleMenuClose(setAnchorElAdministration)
+                navigate("/home/products")
+              }}>
+                Products
               </MenuItem>
-              <MenuItem onClick={handleMenuClose(setAnchorElAdministration)}>
-                Administration
+              <MenuItem onClick={() => {
+                handleMenuClose(setAnchorElAdministration)
+                navigate("/home/health-facilities")
+              }}>
+                Health Facilities
               </MenuItem>
-              <MenuItem onClick={handleMenuClose(setAnchorElAdministration)}>
-                Administration
+              <MenuItem onClick={() => {
+                handleMenuClose(setAnchorElAdministration)
+                navigate("/home/medical-services-price")
+              }}>
+                Medical Services Price List
+              </MenuItem>
+              <MenuItem onClick={() => {
+                handleMenuClose(setAnchorElAdministration)
+                navigate("/home/medical-items")
+              }}>
+                Medical Items Price List
+              </MenuItem>
+              <MenuItem onClick={() => {
+                handleMenuClose(setAnchorElAdministration)
+                navigate("/home/medical-services")
+              }}>
+                Medical Services
+              </MenuItem>
+              <MenuItem onClick={() => {
+                handleMenuClose(setAnchorElAdministration)
+                navigate("/home/administration-users")
+              }}>
+                Users
+              </MenuItem>
+              <MenuItem onClick={() => {
+                handleMenuClose(setAnchorElAdministration)
+                navigate("/home/administration-users-profiles")
+              }}>
+                Users Profiles
+              </MenuItem>
+              <MenuItem onClick={() => {
+                handleMenuClose(setAnchorElAdministration)
+                navigate("/home/payers")
+              }}>
+                Payers
+              </MenuItem>
+              <MenuItem onClick={() => {
+                handleMenuClose(setAnchorElAdministration)
+                navigate("/home/locations")
+              }}>
+                Locations
+              </MenuItem>
+              <MenuItem onClick={() => {
+                handleMenuClose(setAnchorElAdministration)
+                navigate("/home/policyholder-users")
+              }}>
+                Policyholder Users
+              </MenuItem>
+              <MenuItem onClick={() => {
+                handleMenuClose(setAnchorElAdministration)
+                navigate("/home/contribution-plans")
+              }}>
+                Conribution Plans
+              </MenuItem>
+              <MenuItem onClick={() => {
+                handleMenuClose(setAnchorElAdministration)
+                navigate("/home/contribution-plans-bundles")
+              }}>
+                Conribution Plan Bundles
               </MenuItem>
             </Menu>
           </Box>
@@ -214,7 +328,7 @@ const Navbar = () => {
             variant="outlined"
             placeholder="Search"
             size="small"
-            sx={{ backgroundColor: "#F9FBFC", borderRadius: "4px"}}
+            sx={{ backgroundColor: "#F9FBFC", borderRadius: "4px" }}
           />
 
         </Box>
@@ -241,7 +355,7 @@ const Navbar = () => {
 
 
       </Box>
-    </Box>
+    </Box >
   );
 }
 
