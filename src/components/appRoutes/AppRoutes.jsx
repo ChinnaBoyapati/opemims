@@ -11,9 +11,27 @@ import ClaimReview from "../claims/ClaimReview";
 import BatchRunControlPage from "../claims/BatchRunControlPage";
 import ProductControl from "../administration/ProductControl";
 import HealthFacilities from "../administration/HealthFacilities";
-import { MedicalServices } from "@mui/icons-material";
+// import { Payments } from "@mui/icons-material";
+import Payments from "../insurees&policies/Payments"
 import MedicalItems from './../administration/MedicalItems';
+import MedicalServices from "../administration/MedicalServices"
 import MedicalServicesPrice from "../administration/MedicalServicesPrice";
+import AdministrationUsers from "../administration/AdministrationUsers";
+import AdministrationUserProfile from "../administration/AdministrationUserProfile";
+import Payers from "../administration/Payers";
+import Locations from "../administration/Locations";
+import PolicyHolderUser from "../administration/PolicyHolderUser";
+import ConributionPlans from "../administration/ConributionPlans";
+import ContributionPlanBundles from "../administration/ContributionPlanBundles";
+import AddFamily from "../insurees&policies/AddFamily";
+import ViewFamily from "../insurees&policies/ViewFamily";
+import Insurees from "../insurees&policies/Insurees";
+import Policies from "../insurees&policies/Policies";
+import Contributions from "../insurees&policies/Contributions";
+import PolicyHolders from "../insurees&policies/PolicyHolders";
+// import { Contacts } from "@mui/icons-material";
+// import Contacts from '../insurees&policies/Contracts';
+import Contracts from "../insurees&policies/Contracts";
 
 export let router = createBrowserRouter([
   {
@@ -35,7 +53,7 @@ export let router = createBrowserRouter([
     element: <Home />,
     children: [
       {
-        path: "/home/claims-controls",
+        path: "/home",
         element: <ClaimsControlPage />
       },
       {
@@ -69,8 +87,67 @@ export let router = createBrowserRouter([
       {
         path: "/home/medical-services-price",
         element: <MedicalServicesPrice />
-      }
+      },
+      {
+        path: "/home/administration-users",
+        element: <AdministrationUsers />
+      },
+      {
+        path: "/home/administration-users-profiles",
+        element: <AdministrationUserProfile />
+      },
+      {
+        path: "/home/payers",
+        element: <Payers />
+      },
+      {
+        path: "/home/locations",
+        element: <Locations />
+      },
+      {
+        path: "/home/policyholder-users",
+        element: <PolicyHolderUser />
+      },
+      {
+        path: "/home/contribution-plans",
+        element: <ConributionPlans />
+      },
+      {
+        path: "/home/contribution-plans-bundles",
+        element: <ContributionPlanBundles />
+      },
+      {
+        path: "/home/add-family",
+        element: <AddFamily />
+      },
+      {
+        path: "/home/view-family",
+        element: <ViewFamily />
+      },
+      {
+        path: "/home/insurees",
+        element: <Insurees />
+      },
+      {
+        path: "/home/policies",
+        element: <Policies />
+      },
+      {
+        path: "/home/contributions",
+        element: <Contributions />
+      },
+      {
+        path: "/home/payments",
+        element: <Payments />
+      },
+      {
+        path: "/home/policyHolders",
+        element: <PolicyHolders />
+      },
+      {
+        path: "/home/contacts",
+        element: <Contracts />
+      },
     ]
   }
-
 ])
